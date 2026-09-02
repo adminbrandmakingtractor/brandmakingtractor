@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /blog/login
+Disallow: /blog/dashboard
+Disallow: /blog/editor
+
+Sitemap: https://brandmakingtractor.com/sitemap.xml

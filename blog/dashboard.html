@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | BrandMakingTracktor Admin</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/admin.css">
+<script src="/assets/js/config.js"></script>
+</head>
+<body class="admin-body">
+
+<div class="admin-topbar">
+  <div class="container">
+    <a href="/blog/dashboard" class="admin-topbar-brand">
+      <img src="/assets/images/logo.svg" alt="BrandMakingTracktor" width="30" height="30">
+      BrandMakingTracktor Admin
+    </a>
+    <div class="admin-topbar-user">
+      <span id="adminUserEmail"></span>
+      <button class="btn btn-sm btn-secondary" id="adminLogoutBtn" style="background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.3);">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<div class="admin-wrap">
+  <div class="container">
+
+    <div class="admin-panel">
+      <div class="admin-panel-head">
+        <h2 class="mb-0">Blog Posts</h2>
+        <a href="/blog/editor" class="btn btn-primary">+ New Post</a>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr><th>Title</th><th>Category</th><th>Status</th><th>Published</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="postsTableBody">
+            <tr><td colspan="5">Loading posts...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="admin-panel">
+      <div class="admin-panel-head">
+        <h2 class="mb-0">Categories</h2>
+      </div>
+      <ul id="categoryList"><li class="text-muted">Loading categories...</li></ul>
+      <form id="newCategoryForm" class="flex gap-16" style="margin-top:20px;">
+        <input type="text" id="newCategoryName" placeholder="New category name" style="flex:1;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;">
+        <button type="submit" class="btn btn-secondary">Add Category</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/assets/js/supabase-client.js"></script>
+<script src="/assets/js/forms.js"></script>
+<script src="/assets/js/admin/auth.js"></script>
+<script src="/assets/js/admin/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | BrandMakingTracktor</title>
+<meta name="description" content="BrandMakingTracktor blog article.">
+<meta property="og:title" content="BrandMakingTracktor Blog">
+<meta property="og:description" content="BrandMakingTracktor blog article.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="/assets/images/logo.svg">
+<link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/config.js"></script>
+<!-- Consent Mode v2 defaults — must run before GTM loads. Real choice is
+     collected by assets/js/consent.js; until then everything defaults to denied. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  (function () {
+    var stored = null;
+    try { stored = JSON.parse(localStorage.getItem('bmt_cookie_consent')); } catch (e) {}
+    var analyticsGranted = stored && stored.analytics ? 'granted' : 'denied';
+    var marketingGranted = stored && stored.marketing ? 'granted' : 'denied';
+    gtag('consent', 'default', {
+      ad_storage: marketingGranted,
+      ad_user_data: marketingGranted,
+      ad_personalization: marketingGranted,
+      analytics_storage: analyticsGranted,
+      wait_for_update: 500
+    });
+  })();
+</script>
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',(window.BMT_CONFIG&&window.BMT_CONFIG.GTM_CONTAINER_ID)||'GTM-KHT4QTCC');
+</script>
+<script src="/assets/js/attribution.js"></script>
+<script src="/assets/js/datalayer.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHT4QTCC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div id="site-header"></div>
+
+<main id="main">
+  <section class="section" style="padding-top:40px;padding-bottom:64px;">
+    <div class="container">
+      <div class="breadcrumb" style="color:var(--text-muted);margin-bottom:20px;">
+        <a href="/" style="color:var(--navy-700);">Home</a> / <a href="/blog/" style="color:var(--navy-700);">Blog</a> / <span>Article</span>
+      </div>
+
+      <div id="postLoading" class="blog-loading">Loading article...</div>
+      <div id="postNotFound" class="blog-error" hidden>
+        <p>We couldn't find that article. It may have been unpublished or the link may be incorrect.</p>
+        <a href="/blog/" class="btn btn-secondary">Back to Blog</a>
+      </div>
+
+      <div class="post-layout" id="postBody" hidden>
+        <article class="post-main">
+          <div class="post-hero-image" id="postHeroImage"></div>
+
+          <span class="badge" id="postBadge">Insights</span>
+          <h1 id="postTitle" style="margin-top:16px;">Loading article...</h1>
+          <div class="post-meta-row post-meta-row-light">
+            <span id="postAuthor"></span>
+            <span id="postDate"></span>
+            <span id="postReadTime"></span>
+          </div>
+
+          <div class="post-content" id="postContent"></div>
+
+          <div class="divider"></div>
+          <div class="flex gap-16" style="flex-wrap:wrap;">
+            <a href="/blog/" class="btn btn-secondary">Back to Blog</a>
+            <a href="/get-started" class="btn btn-primary" data-cta="get_started_blog_post">Get Started</a>
+          </div>
+        </article>
+
+        <aside class="post-sidebar">
+          <div class="popular-blogs-card">
+            <div class="popular-blogs-head">
+              <span>&#128293;</span> Popular Blogs
+            </div>
+            <div id="popularBlogsList" class="popular-blogs-list">
+              <div class="blog-loading" style="padding:24px;">Loading...</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/assets/js/supabase-client.js"></script>
+<script src="/assets/js/forms.js"></script>
+<script src="/assets/js/partials.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/consent.js"></script>
+<script src="/assets/js/post.js"></script>
+<script src="/assets/js/popup.js"></script>
+</body>
+</html>

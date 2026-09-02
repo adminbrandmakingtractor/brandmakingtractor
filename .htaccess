@@ -1,0 +1,25 @@
+# BrandMakingTracktor — Apache rewrite rules (Hostinger)
+# Clean URLs everywhere: /about serves about.html, /services/branding serves
+# services/branding.html, /blog/<slug> serves blog/post.html. Mirrored for
+# local development by dev-server.py.
+
+RewriteEngine On
+
+# Prefer the extensionless page's .html file over a same-named folder that
+# has no index.html of its own — this is what makes both /services and
+# /services/ serve services.html instead of falling into the services/
+# folder (which only holds the 7 sub-pages, not an index of its own).
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.*?)/?$ $1.html [L]
+
+# Real files/folders that DO have their own index (e.g. /blog/) pass through
+# normally so Apache's own DirectoryIndex handles them.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Blog post slugs: any remaining /blog/<slug> renders blog/post.html, which
+# reads the slug back out of the visible URL via JavaScript.
+RewriteRule ^blog/([^/]+)/?$ blog/post.html [L]
+
+ErrorDocument 404 /404.html
