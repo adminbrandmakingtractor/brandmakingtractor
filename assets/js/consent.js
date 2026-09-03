@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Cookie/consent foundation.
+ * BrandMakingTractor — Cookie/consent foundation.
  *
  * Pairs with the Consent Mode v2 default signal inlined in each page's
  * <head> (before the GTM snippet). This file renders the banner, records
@@ -53,7 +53,7 @@
     var html =
       '<div class="cookie-consent-banner" id="cookieConsentBanner" role="dialog" aria-label="Cookie preferences">' +
       '<div class="cookie-consent-inner">' +
-      '<p>We use first-party analytics and marketing cookies to understand site traffic and improve BrandMakingTracktor. You can accept all cookies or continue with only the essential ones.</p>' +
+      '<p>We use first-party analytics and marketing cookies to understand site traffic and improve BrandMakingTractor. You can accept all cookies or continue with only the essential ones.</p>' +
       '<div class="cookie-consent-actions">' +
       '<button type="button" class="btn btn-secondary btn-sm" id="cookieRejectBtn">Essential Only</button>' +
       '<button type="button" class="btn btn-primary btn-sm" id="cookieAcceptBtn">Accept All</button>' +

@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Shared client-side form validation helpers.
+ * BrandMakingTractor — Shared client-side form validation helpers.
  * Framework-free: small utilities reused by get-started.js and contact.js.
  */
 (function (window) {

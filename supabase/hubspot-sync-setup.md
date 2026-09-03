@@ -21,7 +21,7 @@ runs, so a submission is never silently lost either way.
 
 1. In HubSpot: **Settings (gear icon) → Integrations → Private Apps**.
 2. Click **Create a private app**.
-3. Name it something like "BrandMakingTracktor Website Sync".
+3. Name it something like "BrandMakingTractor Website Sync".
 4. Go to the **Scopes** tab → under **CRM**, enable:
    - `crm.objects.contacts.read`
    - `crm.objects.contacts.write`

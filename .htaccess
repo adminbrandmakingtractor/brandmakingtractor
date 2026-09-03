@@ -1,4 +1,4 @@
-# BrandMakingTracktor — Apache rewrite rules (Hostinger)
+# BrandMakingTractor — Apache rewrite rules (Hostinger)
 # Clean URLs everywhere: /about serves about.html, /services/branding serves
 # services/branding.html, /blog/<slug> serves blog/post.html. Mirrored for
 # local development by dev-server.py.

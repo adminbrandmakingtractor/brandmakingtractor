@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Blog listing (/blog/index.html).
+ * BrandMakingTractor — Blog listing (/blog/index.html).
  * Reads only `status = published` posts, newest first (RLS enforces this
  * server-side too — see /supabase/schema.sql).
  */
@@ -35,7 +35,7 @@
       (category ? '<span class="badge">' + escapeHtml(category) + "</span>" : "") +
       "<h3>" + escapeHtml(post.title) + "</h3>" +
       "<p>" + escapeHtml(post.excerpt || "") + "</p>" +
-      '<div class="meta">' + escapeHtml(post.author || "BrandMakingTracktor") + " &middot; " + formatDate(post.published_at) + " &middot; " + estimateReadTime(post.content) + "</div>" +
+      '<div class="meta">' + escapeHtml(post.author || "BrandMakingTractor") + " &middot; " + formatDate(post.published_at) + " &middot; " + estimateReadTime(post.content) + "</div>" +
       "</div>" +
       "</a>"
     );

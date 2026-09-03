@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Marketing attribution capture.
+ * BrandMakingTractor — Marketing attribution capture.
  *
  * Captures utm_source / utm_medium / utm_campaign / utm_content / utm_term /
  * gclid / fbclid plus landing_page + referrer on first visit, persists them

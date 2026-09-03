@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Admin authentication.
+ * BrandMakingTractor — Admin authentication.
  *
  * The login screen shows a simple username ("admin") + password, but under
  * the hood it still signs in through Supabase Auth (email/password) — the

@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Supabase client bootstrap.
+ * BrandMakingTractor — Supabase client bootstrap.
  * Requires the Supabase JS CDN script to be loaded first:
  *   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
  * Uses only the public anon key from config.js. RLS policies (see

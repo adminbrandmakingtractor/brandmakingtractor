@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Contact form.
+ * BrandMakingTractor — Contact form.
  * Validates client-side, then inserts into Supabase `contacts` table (RLS
  * allows anonymous INSERT only — see /supabase/schema.sql) with attribution.
  */

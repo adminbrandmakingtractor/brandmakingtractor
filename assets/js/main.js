@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Global site behavior.
+ * BrandMakingTractor — Global site behavior.
  * Runs on every page: dataLayer page_view, delegated CTA/phone/WhatsApp
  * click tracking, and generic accordion (FAQ) behavior.
  */

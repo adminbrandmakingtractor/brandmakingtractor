@@ -1,4 +1,4 @@
-# BrandMakingTracktor — brandmakingtractor.com
+# BrandMakingTractor — brandmakingtractor.com
 
 Production-ready marketing website + blog CMS. Pure **HTML5 / CSS3 / vanilla JavaScript** on the frontend, **Supabase** (Postgres + Auth + Storage + Row Level Security) as the backend. No React, no Next.js, no Tailwind, no build step.
 

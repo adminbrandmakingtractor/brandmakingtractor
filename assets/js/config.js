@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Public runtime configuration.
+ * BrandMakingTractor — Public runtime configuration.
  *
  * Only PUBLIC, publishable values belong here (Supabase URL + anon/public key,
  * GTM container id). The anon key is safe to expose client-side because

@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Get Started lead form (short, popup-style).
+ * BrandMakingTractor — Get Started lead form (short, popup-style).
  * Validates client-side, then inserts into Supabase `leads` table (RLS
  * allows anonymous INSERT only — see /supabase/schema.sql) with attribution.
  */

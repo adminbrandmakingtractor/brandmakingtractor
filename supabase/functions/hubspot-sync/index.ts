@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Supabase Edge Function: sync new leads/contacts to HubSpot
+ * BrandMakingTractor — Supabase Edge Function: sync new leads/contacts to HubSpot
  * and email the team a notification. (Kept in the `hubspot-sync` function/name
  * so the Database Webhooks already wired up in Supabase don't need to change —
  * see supabase/hubspot-sync-setup.md.)
@@ -32,7 +32,7 @@
  *     setup, but Resend only delivers mail from that address to the email
  *     you signed up to Resend with. Once brandmakingtractor.com is verified
  *     in Resend (Domains tab), set this to e.g.
- *     "BrandMakingTracktor <leads@brandmakingtractor.com>" to notify both
+ *     "BrandMakingTractor <leads@brandmakingtractor.com>" to notify both
  *     real team inboxes.
  */
 
@@ -47,7 +47,7 @@ const NOTIFY_TO_EMAILS = (Deno.env.get("NOTIFY_TO_EMAILS") || "partnerships@bran
   .split(",")
   .map((e) => e.trim())
   .filter(Boolean);
-const NOTIFY_FROM_EMAIL = Deno.env.get("NOTIFY_FROM_EMAIL") || "BrandMakingTracktor <onboarding@resend.dev>";
+const NOTIFY_FROM_EMAIL = Deno.env.get("NOTIFY_FROM_EMAIL") || "BrandMakingTractor <onboarding@resend.dev>";
 
 function escapeHtml(value: string) {
   return String(value ?? "").replace(/[&<>"']/g, (c) =>

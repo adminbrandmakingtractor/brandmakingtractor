@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Admin dashboard: list, publish/unpublish, archive,
+ * BrandMakingTractor — Admin dashboard: list, publish/unpublish, archive,
  * delete blog posts. Category management lives inline at the bottom.
  */
 (function () {

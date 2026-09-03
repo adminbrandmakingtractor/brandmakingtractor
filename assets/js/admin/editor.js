@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Admin blog editor (create + edit).
+ * BrandMakingTractor — Admin blog editor (create + edit).
  * /blog/editor            -> create mode
  * /blog/editor?id=<uuid>  -> edit mode
  * Content is authored in a contenteditable area with a small formatting

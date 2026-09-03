@@ -1,5 +1,5 @@
 -- ============================================================================
--- BrandMakingTracktor — Supabase database schema
+-- BrandMakingTractor — Supabase database schema
 -- Run this once in the Supabase SQL editor (or via `supabase db push`).
 -- Safe to re-run: uses IF NOT EXISTS / CREATE OR REPLACE throughout.
 -- ============================================================================
@@ -320,7 +320,7 @@ insert into public.blog_posts (title, slug, excerpt, content, category_id, autho
   <p>If a first-time visitor can''t tell what to do next within a few seconds, you''re losing conversions you''ve already paid to earn.</p>
   <p>If two or more of these sound familiar, it may be time to talk to a specialist about a rebuild rather than another patch. <a href="/services/website-development">See how we approach website development</a> or <a href="/get-started">get started</a> with a quick project scope.</p>',
   (select id from public.blog_categories where slug = 'marketing-strategy'),
-  'BrandMakingTracktor Team',
+  'BrandMakingTractor Team',
   '7 Signs Your Website Needs a Redesign in 2026',
   'Slow load times, high bounce rates and an outdated look are costing you customers. Here are 7 signs it''s time for a website redesign.',
   'published',
@@ -341,7 +341,7 @@ insert into public.blog_posts (title, slug, excerpt, content, category_id, autho
   <p>The strongest approach treats AEO as an extension of SEO, not a replacement for it. Technical SEO fundamentals — fast load times, clean structure, mobile usability — remain the foundation both systems are built on.</p>
   <p>We break this down in more detail on our <a href="/services/seo-aeo-geo">SEO / AEO / GEO service page</a>, including how GEO (Generative Engine Optimization) fits into the picture as generative AI search grows.</p>',
   (select id from public.blog_categories where slug = 'seo-aeo'),
-  'BrandMakingTracktor Team',
+  'BrandMakingTractor Team',
   'SEO vs AEO: What''s the Difference and Why It Matters Now',
   'SEO and AEO are not the same thing. Learn the difference between traditional search optimization and answer engine optimization.',
   'published',
@@ -360,7 +360,7 @@ insert into public.blog_posts (title, slug, excerpt, content, category_id, autho
   <p>Clear brand guidelines mean your team (or your specialists) can produce new marketing material faster, without re-litigating basic design decisions on every project.</p>
   <p>If your visual identity has drifted across channels, a brand guidelines project is often one of the highest-leverage investments you can make. <a href="/services/branding">Learn more about our branding service</a>.</p>',
   (select id from public.blog_categories where slug = 'branding'),
-  'BrandMakingTracktor Team',
+  'BrandMakingTractor Team',
   'Why Consistent Branding Builds Customer Trust',
   'A brand that looks different everywhere it appears erodes trust. Here is why visual and messaging consistency is a growth lever.',
   'published',
@@ -379,7 +379,7 @@ insert into public.blog_posts (title, slug, excerpt, content, category_id, autho
   <p>Ask: "Do people already search for what I offer?" If yes, start with Google Ads. If your product or service needs to be discovered and explained, Meta Ads is often the stronger starting point.</p>
   <p>Most mature accounts eventually run both, coordinated through shared tracking and consistent creative. See how we approach this on our <a href="/services/performance-marketing">performance marketing page</a>.</p>',
   (select id from public.blog_categories where slug = 'marketing-strategy'),
-  'BrandMakingTracktor Team',
+  'BrandMakingTractor Team',
   'Google Ads vs Meta Ads: Which Should You Choose First?',
   'Google Ads and Meta Ads work differently. Learn how to decide which platform deserves your first advertising budget.',
   'published',
@@ -402,7 +402,7 @@ insert into public.blog_posts (title, slug, excerpt, content, category_id, autho
   <p>Without reviewing which topics actually drive traffic, leads or shares, it''s impossible to double down on what''s working and cut what isn''t.</p>
   <p>Our <a href="/services/content-marketing">content marketing service</a> is built specifically to avoid these traps — strategy first, content second.</p>',
   (select id from public.blog_categories where slug = 'marketing-strategy'),
-  'BrandMakingTracktor Team',
+  'BrandMakingTractor Team',
   '5 Content Marketing Mistakes Small Businesses Make',
   'Publishing content without a strategy rarely works. Here are 5 common content marketing mistakes and how to avoid them.',
   'published',

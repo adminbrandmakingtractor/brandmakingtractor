@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Header & footer partials.
+ * BrandMakingTractor — Header & footer partials.
  * Injected via JS so nav/footer markup lives in one place across every page
  * (no build step, no framework — just template strings + DOM injection).
  * Pages include a <div id="site-header"></div> and <div id="site-footer"></div>.
@@ -39,8 +39,8 @@
     var sizeClass = variant === "stack" ? "logo-mark-lg" : "logo-mark";
     var linkClass = variant === "stack" ? "logo-link logo-stack" : "logo-link";
     return (
-      '<a href="/" class="' + linkClass + '" aria-label="BrandMakingTracktor home">' +
-      '<img src="/assets/images/logo.svg" alt="BrandMakingTracktor - We Build Brands That Grow" class="' + sizeClass + '">' +
+      '<a href="/" class="' + linkClass + '" aria-label="BrandMakingTractor home">' +
+      '<img src="/assets/images/logo.svg" alt="BrandMakingTractor - We Build Brands That Grow" class="' + sizeClass + '">' +
       "</a>"
     );
   }
@@ -115,7 +115,7 @@
       "</ul></div>" +
       "</div>" +
       '<div class="footer-bottom">' +
-      "<span>&copy; " + year + " BrandMakingTracktor. All rights reserved.</span>" +
+      "<span>&copy; " + year + " BrandMakingTractor. All rights reserved.</span>" +
       '<span>brandmakingtractor.com &middot; We Build Brands That Grow</span>' +
       "</div>" +
       "</div>" +
@@ -125,7 +125,7 @@
 
   function renderWhatsappFloat() {
     return (
-      '<a href="https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent("Hi BrandMakingTracktor, I'd like to know more about your services.") + '" ' +
+      '<a href="https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent("Hi BrandMakingTractor, I'd like to know more about your services.") + '" ' +
       'target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat with us on WhatsApp" data-track-whatsapp>' +
       '<svg viewBox="0 0 32 32"><path d="M16.01 3C9.38 3 4 8.36 4 14.98c0 2.2.6 4.26 1.63 6.04L4 29l8.2-1.57a13 13 0 003.8.57h.01c6.63 0 12.01-5.36 12.01-11.98C28.02 8.36 22.64 3 16.01 3zm0 21.6c-1.94 0-3.75-.53-5.3-1.44l-.38-.22-4.87.93.94-4.75-.25-.4a9.55 9.55 0 01-1.5-5.14c0-5.3 4.36-9.6 9.7-9.6 2.6 0 5.04 1 6.87 2.83a9.5 9.5 0 012.85 6.79c0 5.3-4.37 9.6-9.7 9.6zm5.32-7.17c-.29-.15-1.72-.85-1.98-.94-.27-.1-.46-.15-.66.14-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.33-1.44-.86-.77-1.44-1.71-1.6-2-.17-.3-.02-.46.13-.6.13-.13.29-.34.44-.5.15-.18.2-.3.29-.5.1-.19.05-.37-.02-.51-.08-.15-.66-1.6-.91-2.19-.24-.58-.48-.5-.66-.5h-.56c-.19 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.42 0 1.43 1.04 2.82 1.19 3.01.15.2 2.05 3.13 4.96 4.39.7.3 1.24.48 1.66.61.7.22 1.34.19 1.84.12.56-.09 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.13-.26-.2-.55-.34z"/></svg>' +
       "</a>"

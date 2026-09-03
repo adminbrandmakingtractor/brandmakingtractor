@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-BrandMakingTracktor — local dev server with clean-URL support.
+BrandMakingTractor — local dev server with clean-URL support.
 
 Mirrors the .htaccess rewrite rules used on Hostinger/Apache in production:
   - /about              -> about.html

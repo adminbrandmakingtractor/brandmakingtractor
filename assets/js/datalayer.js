@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — dataLayer utility (GTM-ready).
+ * BrandMakingTractor — dataLayer utility (GTM-ready).
  *
  * No analytics vendor scripts (GA4, Meta Pixel, Google Ads) are hard-coded
  * here on purpose — those are configured inside Google Tag Manager using the

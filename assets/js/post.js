@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Single blog post (/blog/[slug]).
+ * BrandMakingTractor — Single blog post (/blog/[slug]).
  * Served by /blog/post.html for any /blog/<slug> URL via .htaccess rewrite
  * (see /.htaccess). Slug is read from the visible URL path so the rewrite
  * can stay a plain internal rewrite with no query-string juggling; falls
@@ -37,7 +37,7 @@
   }
 
   function setMeta(post) {
-    var title = (post.meta_title || post.title) + " | BrandMakingTracktor Blog";
+    var title = (post.meta_title || post.title) + " | BrandMakingTractor";
     document.title = title;
     var descTag = document.querySelector('meta[name="description"]');
     if (descTag) descTag.setAttribute("content", post.meta_description || post.excerpt || "");
@@ -47,14 +47,55 @@
     if (ogDesc) ogDesc.setAttribute("content", post.meta_description || post.excerpt || "");
     var ogImage = document.querySelector('meta[property="og:image"]');
     if (ogImage && post.featured_image) ogImage.setAttribute("content", post.featured_image);
+    var postUrl = "https://brandmakingtractor.com/blog/" + post.slug;
     var canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute("href", "https://brandmakingtractor.com/blog/" + post.slug);
+    if (canonical) canonical.setAttribute("href", postUrl);
     else {
       var link = document.createElement("link");
       link.rel = "canonical";
-      link.href = "https://brandmakingtractor.com/blog/" + post.slug;
+      link.href = postUrl;
       document.head.appendChild(link);
     }
+    setStructuredData(post, postUrl);
+  }
+
+  function setStructuredData(post, postUrl) {
+    var existing = document.getElementById("bmtPostSchema");
+    if (existing) existing.remove();
+
+    var articleSchema = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.meta_description || post.excerpt || "",
+      "url": postUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": postUrl },
+      "datePublished": post.published_at || undefined,
+      "dateModified": post.updated_at || post.published_at || undefined,
+      "author": { "@type": "Organization", "name": post.author || "BrandMakingTractor" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BrandMakingTractor",
+        "logo": { "@type": "ImageObject", "url": "https://brandmakingtractor.com/assets/images/logo.svg" }
+      }
+    };
+    if (post.featured_image) articleSchema.image = post.featured_image;
+
+    var breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://brandmakingtractor.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://brandmakingtractor.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": post.title, "item": postUrl }
+      ]
+    };
+
+    var script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "bmtPostSchema";
+    script.textContent = JSON.stringify([articleSchema, breadcrumbSchema]);
+    document.head.appendChild(script);
   }
 
   function renderPost(post) {
@@ -63,7 +104,7 @@
     var category = post.blog_categories ? post.blog_categories.name : null;
     document.getElementById("postBadge").textContent = category || "Insights";
     document.getElementById("postTitle").textContent = post.title;
-    document.getElementById("postAuthor").textContent = post.author || "BrandMakingTracktor";
+    document.getElementById("postAuthor").textContent = post.author || "BrandMakingTractor";
     document.getElementById("postDate").textContent = formatDate(post.published_at);
     document.getElementById("postReadTime").textContent = estimateReadTime(post.content);
 

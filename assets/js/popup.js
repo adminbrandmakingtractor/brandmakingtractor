@@ -1,5 +1,5 @@
 /**
- * BrandMakingTracktor — Enquiry popup.
+ * BrandMakingTractor — Enquiry popup.
  * Shows once per browser session, once the visitor scrolls 70% of the way
  * down the page (with a generous time-based fallback for short pages that
  * never reach that scroll depth). Submits Name / Email / Phone to Supabase
