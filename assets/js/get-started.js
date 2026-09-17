@@ -110,7 +110,7 @@
           status: "new",
 
           // Meta CAPI deduplication ID
-          event_id: eventId
+          //event_id: eventId
         },
         attribution
       );
