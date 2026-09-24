@@ -27,7 +27,7 @@
     return current === hrefNorm;
   }
 
-  var WHATSAPP_NUMBER = "918434862267";
+  var WHATSAPP_NUMBER = "919791718488";
 
   /**
    * The logo file (assets/images/logo.svg) already contains the full lockup
@@ -108,7 +108,7 @@
       "</ul></div>" +
       '<div class="footer-col"><h5>Get In Touch</h5><ul>' +
       '<li><a href="mailto:partnerships@brandmakingtractor.com" data-track-email>partnerships@brandmakingtractor.com</a></li>' +
-      '<li><a href="tel:+' + WHATSAPP_NUMBER + '" data-track-phone>+91 84348 62267</a></li>' +
+      '<li><a href="tel:+' + WHATSAPP_NUMBER + '" data-track-phone>+91 97917 18488</a></li>' +
       '<li><a href="https://wa.me/' + WHATSAPP_NUMBER + '" target="_blank" rel="noopener" data-track-whatsapp>WhatsApp us</a></li>' +
       '<li><a href="/contact">Contact form</a></li>' +
       '<li><a href="/get-started">Start a project</a></li>' +

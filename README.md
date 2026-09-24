@@ -126,7 +126,7 @@ To change the container ID later, update `GTM_CONTAINER_ID` in `assets/js/config
 
 ## 7. WhatsApp
 
-The floating WhatsApp button, footer link, and Contact page all point to **+91 84348 62267** (`assets/js/partials.js`, `WHATSAPP_NUMBER` constant) — update that one constant if the number changes.
+The floating WhatsApp button, footer link, and Contact page all point to **+91 97917 18488** (`assets/js/partials.js`, `WHATSAPP_NUMBER` constant) — update that one constant if the number changes.
 
 ## 8. Currency
 
