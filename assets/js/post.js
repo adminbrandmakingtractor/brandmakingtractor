@@ -76,7 +76,7 @@
       "publisher": {
         "@type": "Organization",
         "name": "BrandMakingTractor",
-        "logo": { "@type": "ImageObject", "url": "https://brandmakingtractor.com/assets/images/logo.svg" }
+        "logo": { "@type": "ImageObject", "url": "https://brandmakingtractor.com/assets/images/logo-icon-512.png" }
       }
     };
     if (post.featured_image) articleSchema.image = post.featured_image;
