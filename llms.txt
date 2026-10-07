@@ -1,0 +1,18 @@
+# BrandMakingTractor
+
+> BrandMakingTractor is a digital marketing and creative growth partner based in India, serving businesses in Patna, Bangalore, Coimbatore and across the country. Each project is matched with a specialist and measured against business outcomes.
+
+## Services
+- [Performance Marketing](https://brandmakingtractor.com/services/performance-marketing): Google Ads, Meta Ads and LinkedIn Ads with conversion tracking and optimisation.
+- [SEO / AEO / GEO](https://brandmakingtractor.com/services/seo-aeo-geo): Technical, on-page and local SEO, Answer Engine Optimization and Generative Engine Optimization.
+- [Website Development](https://brandmakingtractor.com/services/website-development): Custom and WordPress websites, landing pages, GTM/GA4 and CRM integration.
+- [Branding](https://brandmakingtractor.com/services/branding): Brand strategy, visual identity and guidelines.
+- [Content Marketing](https://brandmakingtractor.com/services/content-marketing): Strategy-led website, blog, SEO and social content.
+- [Social Media Marketing](https://brandmakingtractor.com/services/social-media-marketing): Strategy, content production and community management.
+- [Market Research](https://brandmakingtractor.com/services/market-research): Market, audience and competitor research.
+- [UGC Video](https://brandmakingtractor.com/services/ugc-video): User-generated-style video content for ads and social.
+
+## Company
+- [About](https://brandmakingtractor.com/about)
+- [FAQ](https://brandmakingtractor.com/faq)
+- [Contact](https://brandmakingtractor.com/contact): partnerships@brandmakingtractor.com, +91 97917 18488

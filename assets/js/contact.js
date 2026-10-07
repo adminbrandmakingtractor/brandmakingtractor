@@ -77,6 +77,7 @@
 
       if (!valid) return;
 
+      var submitLabel = submitBtn.innerHTML;
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending...";
 
@@ -90,13 +91,24 @@
         "_" +
         Math.random().toString(36).substring(2, 12);
 
+      // The home page form also asks for service + budget. The contacts
+      // table has no columns for those, so they're prefixed onto the message
+      // (which is also what the notification email shows).
+      var serviceEl = form.querySelector("#cService");
+      var budgetEl = form.querySelector("#cBudget");
+      var extras = [];
+      if (serviceEl && serviceEl.value) extras.push("Needs help with: " + serviceEl.value);
+      if (budgetEl && budgetEl.value) extras.push("Budget: " + budgetEl.value);
+      var messageText = fields.message.value.trim();
+      if (extras.length) messageText = extras.join("\n") + "\n\n" + messageText;
+
       var payload = Object.assign(
         {
           name: fields.name.value.trim(),
           email: fields.email.value.trim(),
           phone: fields.phone.value.trim() || null,
           company: fields.company.value.trim() || null,
-          message: fields.message.value.trim()
+          message: messageText
         },
         {
           source: attribution.source,
@@ -107,6 +119,8 @@
         }
       );
 
+      if (window.BMT && window.BMT.notify) window.BMT.notify("Contact Message", payload);
+
       window.bmtSupabase
         .from("contacts")
         .insert([payload])
@@ -115,7 +129,7 @@
             console.error(res.error);
 
             submitBtn.disabled = false;
-            submitBtn.textContent = "Send Message";
+            submitBtn.innerHTML = submitLabel;
 
             f.showStatus(
               statusEl,
@@ -171,7 +185,7 @@
           });
 
           submitBtn.disabled = false;
-          submitBtn.textContent = "Send Message";
+          submitBtn.innerHTML = submitLabel;
 
           form.hidden = true;
 
@@ -183,7 +197,7 @@
           console.error(err);
 
           submitBtn.disabled = false;
-          submitBtn.textContent = "Send Message";
+          submitBtn.innerHTML = submitLabel;
 
           f.showStatus(
             statusEl,

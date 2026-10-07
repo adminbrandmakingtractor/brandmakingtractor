@@ -126,6 +126,8 @@
         fbclid: attribution.fbclid
       };
 
+      if (window.BMT && window.BMT.notify) window.BMT.notify("Popup Enquiry", payload);
+
       window.bmtSupabase
         .from("contacts")
         .insert([payload])

@@ -115,6 +115,8 @@
         attribution
       );
 
+      if (window.BMT && window.BMT.notify) window.BMT.notify("Get Started Lead", payload);
+
       window.bmtSupabase
         .from("leads")
         .insert([payload])
