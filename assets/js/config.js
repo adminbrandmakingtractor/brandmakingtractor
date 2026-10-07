@@ -14,5 +14,5 @@ window.BMT_CONFIG = {
   SITE_URL: "https://brandmakingtractor.com",
   // Web3Forms access key (public by design) — every form submission is
   // emailed to admin.brandmakingtractor@gmail.com. Get it at web3forms.com.
-  WEB3FORMS_ACCESS_KEY: ""
+  WEB3FORMS_ACCESS_KEY: "61824aeb-424a-44b0-967b-3c5b19cdd4b0"
 };
