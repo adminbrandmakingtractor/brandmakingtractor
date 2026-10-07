@@ -158,6 +158,31 @@
     );
   }
 
+  /* Thumb-friendly bottom navigation (mobile only, hidden by CSS above 767px). */
+  function renderTabbar() {
+    var icon = function (d) {
+      return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + "</svg>";
+    };
+    var tabs = [
+      { href: "/", label: "Home", d: '<path d="M4 11.5L12 4l8 7.5"/><path d="M6 10v9h4v-5h4v5h4v-9"/>' },
+      { href: "/services", label: "Services", d: '<rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/>' },
+      { href: "/get-started", label: "Start", cta: true, d: '<path d="M5 12h14M13 6l6 6-6 6"/>' },
+      { href: "/blog/", label: "Blog", d: '<path d="M5 4h11l3 3v13H5z"/><path d="M9 10h6M9 14h6"/>' },
+      { href: "/contact", label: "Contact", d: '<path d="M21 11.5a8.4 8.4 0 01-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1121 11.5z"/>' }
+    ];
+    return (
+      '<nav class="tabbar" aria-label="Quick navigation"><div class="tabbar-inner">' +
+      tabs.map(function (t) {
+        var active = !t.cta && isActive(t.href);
+        if (t.cta) {
+          return '<a href="' + t.href + '" class="tab tab-cta" data-cta="get_started_tabbar"><span class="tab-cta-btn">' + icon(t.d) + "</span><span>" + t.label + "</span></a>";
+        }
+        return '<a href="' + t.href + '" class="tab' + (active ? " active" : "") + '"' + (active ? ' aria-current="page"' : "") + ">" + icon(t.d) + "<span>" + t.label + "</span></a>";
+      }).join("") +
+      "</div></nav>"
+    );
+  }
+
   function initMobileMenu() {
     var btn = document.getElementById("hamburgerBtn");
     var menu = document.getElementById("mobileMenu");
@@ -203,6 +228,9 @@
     }
     if (!document.querySelector(".back-to-top")) {
       document.body.insertAdjacentHTML("beforeend", renderBackToTop());
+    }
+    if (!document.querySelector(".tabbar") && !/^\/blog\/(login|dashboard|editor)/.test(normalizedPath())) {
+      document.body.insertAdjacentHTML("beforeend", renderTabbar());
     }
 
     var backToTop = document.getElementById("backToTop");

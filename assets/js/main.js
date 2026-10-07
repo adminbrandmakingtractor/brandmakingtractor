@@ -243,17 +243,19 @@
   function initWhatsappTuck() {
     var zones = Array.prototype.slice.call(document.querySelectorAll("[data-wa-tuck]"));
     if (!zones.length) return;
-    // Only the bottom ~110px band of the viewport matters — that's where the button sits.
-    window.addEventListener("scroll", function () {
+    // Only the band just above the bottom nav matters — that is where the button sits.
+    function check() {
       var wa = document.querySelector(".whatsapp-float");
       if (!wa || window.innerWidth >= 768) { if (wa) wa.classList.remove("is-tucked"); return; }
-      var band = window.innerHeight - 110;
+      var band = window.innerHeight - 160;
       var hit = zones.some(function (z) {
         var r = z.getBoundingClientRect();
         return r.top < window.innerHeight && r.bottom > band;
       });
       wa.classList.toggle("is-tucked", hit);
-    }, { passive: true });
+    }
+    window.addEventListener("scroll", check, { passive: true });
+    setTimeout(check, 300);
   }
 
   /* ---------- FAQ accordion ---------- */
