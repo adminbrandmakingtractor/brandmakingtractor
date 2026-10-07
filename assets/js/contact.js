@@ -140,43 +140,9 @@
             return;
           }
 
-          /*
-           * Send Contact event to Meta CAPI.
-           */
-          if (
-            window.bmtSupabase &&
-            window.bmtSupabase.functions
-          ) {
-            window.bmtSupabase.functions
-              .invoke("meta-capi", {
-                body: {
-                  event_name: "Contact",
-                  event_id: eventId,
-                  email: payload.email,
-                  phone: payload.phone,
-                  event_source_url: window.location.href
-                }
-              })
-              .then(function (capiRes) {
-                if (capiRes.error) {
-                  console.error(
-                    "Meta CAPI error:",
-                    capiRes.error
-                  );
-                } else {
-                  console.log(
-                    "Meta CAPI Contact sent:",
-                    capiRes.data
-                  );
-                }
-              })
-              .catch(function (err) {
-                console.error(
-                  "Meta CAPI network error:",
-                  err
-                );
-              });
-          }
+          // Server-side Meta CAPI event, deduplicated with the browser Pixel via event_id.
+          window.BMT.capi("Contact", eventId, payload);
+
 
           // Send same event_id to GTM → Browser Meta Pixel
           window.BMT.track.contactSubmit({

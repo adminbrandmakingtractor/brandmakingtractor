@@ -43,7 +43,59 @@
     }
   };
 
+  function readCookie(name) {
+    var m = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]*)"));
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+
+  /** Unique id shared by the browser Pixel event and the matching CAPI event (deduplication). */
+  function newEventId(prefix) {
+    return (prefix || "evt") + "_" + Date.now() + "_" + Math.random().toString(36).substring(2, 12);
+  }
+
+  /**
+   * Server-side Meta Conversions API event via the `meta-capi` Supabase
+   * function. Sends the same event_id as the browser Pixel plus the _fbp /
+   * _fbc browser ids and user agent, which raise Meta's match quality.
+   * Best-effort: never blocks or breaks the form.
+   */
+  function capi(eventName, eventId, data) {
+    try {
+      if (!window.bmtSupabase || !window.bmtSupabase.functions) return;
+      var fbc = readCookie("_fbc");
+      if (!fbc) {
+        var fbclid = new URLSearchParams(window.location.search).get("fbclid") ||
+          (window.BMT.attribution && (window.BMT.attribution.getAttributionForSubmission() || {}).fbclid);
+        if (fbclid) fbc = "fb.1." + Date.now() + "." + fbclid;
+      }
+      var names = String((data && data.name) || "").trim().split(/\s+/);
+      window.bmtSupabase.functions
+        .invoke("meta-capi", {
+          body: {
+            event_name: eventName,
+            event_id: eventId,
+            email: data && data.email,
+            phone: (data && data.phone) || null,
+            first_name: names[0] || null,
+            last_name: names.slice(1).join(" ") || null,
+            fbp: readCookie("_fbp"),
+            fbc: fbc,
+            client_user_agent: navigator.userAgent,
+            event_source_url: window.location.href
+          }
+        })
+        .then(function (res) {
+          if (res.error) console.error("Meta CAPI error:", res.error);
+        })
+        .catch(function (err) { console.error("Meta CAPI network error:", err); });
+    } catch (err) {
+      console.error("Meta CAPI error:", err);
+    }
+  }
+
   window.BMT = window.BMT || {};
   window.BMT.track = track;
+  window.BMT.capi = capi;
+  window.BMT.newEventId = newEventId;
   window.BMT.push = push;
 })(window);

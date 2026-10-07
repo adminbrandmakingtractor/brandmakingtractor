@@ -136,44 +136,9 @@
             return;
           }
 
-          /*
-           * Send Lead event to Meta CAPI.
-           * The same event_id is also sent to GTM/Browser Pixel.
-           */
-          if (
-            window.bmtSupabase &&
-            window.bmtSupabase.functions
-          ) {
-            window.bmtSupabase.functions
-              .invoke("meta-capi", {
-                body: {
-                  event_name: "Lead",
-                  event_id: eventId,
-                  email: payload.email,
-                  phone: payload.phone,
-                  event_source_url: window.location.href
-                }
-              })
-              .then(function (capiRes) {
-                if (capiRes.error) {
-                  console.error(
-                    "Meta CAPI error:",
-                    capiRes.error
-                  );
-                } else {
-                  console.log(
-                    "Meta CAPI Lead sent:",
-                    capiRes.data
-                  );
-                }
-              })
-              .catch(function (err) {
-                console.error(
-                  "Meta CAPI network error:",
-                  err
-                );
-              });
-          }
+          // Server-side Meta CAPI event, deduplicated with the browser Pixel via event_id.
+          window.BMT.capi("Lead", eventId, payload);
+
 
           // Send event_id to GTM → Browser Meta Pixel
           window.BMT.track.leadSubmit({

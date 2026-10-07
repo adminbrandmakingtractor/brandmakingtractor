@@ -139,7 +139,9 @@
             return;
           }
           if (window.BMT && window.BMT.track) {
-            window.BMT.track.leadSubmit({ form_name: "popup" });
+            var eventId = window.BMT.newEventId("popup");
+            window.BMT.capi("Lead", eventId, payload);
+            window.BMT.track.leadSubmit({ form_name: "popup", event_id: eventId });
           }
           form.hidden = true;
           document.getElementById("enquirySuccess").hidden = false;
