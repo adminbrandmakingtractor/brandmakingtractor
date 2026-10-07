@@ -11,5 +11,8 @@ window.BMT_CONFIG = {
   SUPABASE_URL: "https://pxvlfsypycbfxabndfqm.supabase.co",
   SUPABASE_ANON_KEY: "sb_publishable_HFy07cvauuqerLUeQNypcg_vj1Nt5Ch",
   GTM_CONTAINER_ID: "GTM-KHT4QTCC",
-  SITE_URL: "https://brandmakingtractor.com"
+  SITE_URL: "https://brandmakingtractor.com",
+  // Web3Forms access key (public by design) — every form submission is
+  // emailed to admin.brandmakingtractor@gmail.com. Get it at web3forms.com.
+  WEB3FORMS_ACCESS_KEY: ""
 };
